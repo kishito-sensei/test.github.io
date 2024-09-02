@@ -1,0 +1,252 @@
+/* Styles généraux */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  background-image: url('media/fond.gif');
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.affiches-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px; /* Ajout de padding pour respirer */
+}
+
+/* Styles pour les images dans la liste */
+.main-menu img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  object-fit: contain;
+}
+
+/* Styles du footer */
+footer {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  color: #FFF;
+  font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+}
+
+/* Styles des icônes de médias sociaux */
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media-icons li {
+  margin: 0 40px;
+}
+
+.social-media-icons a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media-icons a:hover {
+  color: #FEFAE0;
+}
+
+/* Styles pour la liste de navigation */
+nav ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+  background: #000000;
+  text-align: center;
+  width: 100%;
+}
+
+/* Styles pour les éléments de la liste */
+nav li {
+  padding: 15px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+nav li:first-child {
+  margin-right: auto;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Styles pour les liens */
+nav a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 15px 10px;
+  position: relative;
+}
+
+nav a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover:after {
+  width: 100%;
+  left: 0;
+  background-color: #fefae0;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li:first-child {
+    flex-direction: column;
+  }
+
+  .affiches-container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 90%; /* Ajuste la largeur des cartes pour les petits écrans */
+    margin: 10px 0;
+  }
+}
+
+/* Styles pour les affiches */
+:root {
+  --card-height: 400px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 20px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(6px);
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+margin-bottom: 60px;
+
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}

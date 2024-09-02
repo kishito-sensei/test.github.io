@@ -1,0 +1,219 @@
+/* Styles généraux pour le corps */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Styles pour la section principale */
+main {
+    flex: 1;
+    position: relative;
+    background-image: url('media/fond.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles pour les images dans la liste */
+.main-menu img{
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
+    object-fit:contain;
+  
+}
+
+/* Styles pour le conteneur du chat */
+.chat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+/* Styles pour les images et la zone de texte */
+img, .text-area {
+    width: 100%;
+    max-width: 350px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Styles pour la zone de texte */
+/* Styles for the text area */
+.text-area {
+    flex: 1;
+    background-color: white;
+    height: 500px;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Styles pour le footer */
+footer {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+    font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+}
+
+/* Styles pour les icônes de médias sociaux */
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-icons li {
+    margin: 0 40px;
+}
+
+.social-media-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media-icons a:hover {
+    color: #fefae0;
+}
+
+/* Styles pour la liste de navigation */
+nav ul {
+    margin: 0 auto; /* Supprimez la marge inférieure */
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+    background: #000000;
+    text-align: center;
+    width: 100%;
+}
+
+/* Styles pour les éléments de la liste */
+nav li {
+    padding: 15px 10px;
+    position: relative;
+    display: flex; /* Utilisez flex pour centrer verticalement les éléments */
+    align-items: center; /* Centrer verticalement */
+}
+
+nav li:first-child {
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Styles pour les liens */
+nav a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 10px;
+    position: relative;
+}
+
+nav a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+    left: 0;
+    background-color: #fefae0;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li:first-child {
+        flex-direction: column;
+    }
+
+    .chat {
+        flex-direction: column;
+        text-align: center;
+        margin: 100px;
+    }
+
+    .chat img, .text-area {
+        max-width: 100%;
+    }
+
+    .chat img {
+        margin-top: 0;
+    }
+}
+
+/* Styles pour les titres */
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    margin: 10px;
+    font-size: 40px;
+}
+
+h2, h3, h4 {
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px;
+}
+
+h2 span {
+    color: rgba(150, 93, 233, 1);
+    font-family: 'Single Day', sans-serif;
+    font-size: 20px;
+    margin: 10px;
+}
+
+
+
+
+/* Style for the PDF button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color:  rgba(150, 93, 233, 1);
+}

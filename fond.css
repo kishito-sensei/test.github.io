@@ -1,0 +1,207 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Styles pour la section principale */
+main {
+    flex: 1;
+    position: relative;
+    background-image: url('media/fond.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cela assure que la colonne de vidéos est centrée verticalement sur la page */
+}
+
+/* Styles pour les images dans la liste */
+.main-menu img{
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
+    object-fit:contain;
+
+  
+}
+
+.chat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    margin-bottom: 5em;
+}
+
+/* Animation lors du survol des images */
+.chat img {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 60px;
+    margin-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: transform 0.3s ease; /* Animation de transition */
+}
+
+.chat img:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+
+/* Styles généraux du footer */
+footer {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    color: #FFF;
+    font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+}
+
+/* Styles des icônes de médias sociaux */
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-icons li {
+    margin: 0 40px;
+}
+
+.social-media-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media-icons a:hover {
+    color: #FEFAE0;
+}
+/* Styles pour la liste de navigation */
+nav ul {
+    margin: 0 auto; /* Supprimez la marge inférieure */
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    font: bold 14px/1.4 'Open Sans', Arial, sans-serif;
+    background: #000000;
+    text-align: center;
+    width: 100%;
+}
+
+/* Styles pour les éléments de la liste */
+nav li {
+    padding: 15px 10px;
+    position: relative;
+    display: flex; /* Utilisez flex pour centrer verticalement les éléments */
+    align-items: center; /* Centrer verticalement */
+}
+
+nav li:first-child {
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Styles pour les liens */
+nav a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 10px;
+    position: relative;
+}
+
+nav a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+    left: 0;
+    background-color: #fefae0;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li:first-child {
+        flex-direction: column;
+    }
+
+    .chat {
+        flex-direction: column;
+        text-align: center;
+        margin: 100px;
+    }
+
+    .chat img, .text-area {
+        max-width: 100%;
+    }
+
+    .chat img {
+        margin-top: 0;
+    }
+}
+
+
+
+/* Styles pour les vidéos */
+.video-column {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 100%; /* La vidéo occupera toute la largeur de son conteneur */
+    max-width: 640px; /* Mais ne dépassera pas une largeur de 640 pixels */
+    height: auto; /* La hauteur sera ajustée automatiquement pour conserver le ratio d'aspect */
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
+}
+
+main h1{
+    text-align: center;
+         background-color: #FFF;
+        font-family: 'Bebas Neue', sans-serif;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 100%; /* La vidéo occupera toute la largeur de son conteneur */
+        max-width: none; /* Réinitialiser la limite de largeur pour les petits écrans */
+    }
+}
